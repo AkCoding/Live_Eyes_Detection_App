@@ -27,5 +27,15 @@ while True:
     for (x, y, w, h) in eyes:
         cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 0, 255), 3)
 
+    # Show image
+    cv2.imshow('Live Eye Detection', frame)
 
+    # wait to close window
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+# release camera/webcam
+cam.release()
+
+# close all windows
+cv2.destroyAllWindows()
 
